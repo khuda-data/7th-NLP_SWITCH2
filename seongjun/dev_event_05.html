@@ -1,0 +1,2039 @@
+<body>
+ <div class="notification-canvas-container" id="site_alarm_slidemenu_container">
+  <div class="notification-canvas-backdrop" id="site_alarm_slidemenu_backdrop" style="display: none">
+  </div>
+  <div class="notification-canvas alarm-pane alarm_slide" id="site_alarm_slidemenu">
+   <div class="tse-scrollable _scroll_wrap">
+    <div class="tse-content tab-content _is_tse_content" style="padding-top: 60px;">
+     <div class="site-alarm-head _alarm_header">
+      <header id="site_alarm_title">
+       알림
+      </header>
+      <a class="btn btn-flat goback" href="javascript:;" onclick="ALARM_MENU.showAlarmSlide();">
+       <i aria-hidden="true" class="btm bt-arrow-left">
+       </i>
+       <span class="sr-only">
+        뒤로
+       </span>
+      </a>
+     </div>
+     <div class="site-alarm-head _setting_header" style="display: none">
+      <header id="site_alarm_title_setting">
+       알림 설정
+      </header>
+      <a class="btn btn-flat goback" href="javascript:;" onclick="ALARM_MENU.toggleAlarmSetting();">
+       <i aria-hidden="true" class="btm bt-arrow-left">
+       </i>
+       <span class="sr-only">
+        뒤로
+       </span>
+      </a>
+     </div>
+     <div class="site_alarm_list_wrap" id="site_alarm_list_wrap">
+      <!--알림 리스트-->
+      <div class="notify-body" id="site_alarm_tab">
+      </div>
+      <div class="notify-body" id="site_alarm_more_btn" style="display: none;">
+       <a class="tile more" href="javascript:;" onclick="ALARM_MENU.getHeaderAlarmList()">
+        <div class="tile-content">
+         더보기
+        </div>
+       </a>
+      </div>
+     </div>
+     <div class="site_alarm_setting_wrap" id="site_alarm_setting_wrap" style="display: none;">
+      <div class="offcanvas-block alarm-setting">
+       <div class="_scroll_wrap" id="site_alarm_menu_tap_wrap">
+        <div class="tab-content">
+         <div class="tab-pane active">
+          <div class="notify-body">
+           <a class="board-alaram tile" href="javascript:;">
+            게시물 알림
+           </a>
+           <a class="tile" href="javascript:;" onclick="ALARM_MENU.changeAlarmSetting($(this),'','my_post')">
+            <div class="tile-content">
+             <div class="tile-text">
+              내 글 반응
+              <div class="text-sm text-gray-bright">
+               내가 작성한 게시물이나 댓글에 다른 사람이 댓글이나 답글을 작성하면 알려줍니다.
+              </div>
+              <div class="check">
+               <div class="checkbox checkbox-styled">
+                <label>
+                 <input title="내 글 반응" type="checkbox" value="ok"/>
+                 <span>
+                 </span>
+                </label>
+               </div>
+              </div>
+             </div>
+            </div>
+           </a>
+           <a class="tile" href="javascript:;" onclick="ALARM_MENU.changeAlarmSetting($(this),'','notice')">
+            <div class="tile-content">
+             <div class="tile-text">
+              공지사항
+              <div class="text-sm text-gray-bright">
+               사이트에서 보내는 중요한 공지를 실시간으로 알려줍니다.
+              </div>
+              <div class="check">
+               <div class="checkbox checkbox-styled">
+                <label>
+                 <input title="공지사항" type="checkbox" value="ok"/>
+                 <span>
+                 </span>
+                </label>
+               </div>
+              </div>
+             </div>
+            </div>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="site-alarm-body">
+    <!--//알림 리스트-->
+    <!--알림 설정-->
+   </div>
+  </div>
+ </div>
+ <!-- end#offcanvas-help -->
+ <ul class="dropdown-menu animation-dock member_profile" id="member_profile">
+  <li class="dropdown-profile text-center">
+   <a class="nav-btn-icon profile alarm-toggle _show_alarm" href="javascript:;" id="slide-alarm" onclick="ALARM_MENU.showAlarmSlide();" style="right: 0; position:absolute; right: 0; top:0; font-size:20px; padding:20px; ">
+    <i class="icon-bell">
+    </i>
+    <span class="sr-only">
+     Alarm
+    </span>
+   </a>
+   <span class="profile-info">
+    <div onclick="SITE_MEMBER.editProfile()">
+     <img alt="프로필 정보수정" class="img-circle dropdown-avatar-big _profile_img" src="/common/img/default_profile.png"/>
+    </div>
+    <div class="sm-padding no-padding-bottom">
+    </div>
+   </span>
+  </li>
+  <li class="profile-footer btn-group-justified">
+   <a class="btn btn-flat" href="javascript:;" onclick="SITE_MEMBER.openLogin('L3Nob3BfbXlwYWdl','mypage');">
+    마이페이지
+   </a>
+   <a class="btn btn-flat right" href="/logout.cm?back_url=Lw%3D%3D">
+    로그아웃
+   </a>
+  </li>
+ </ul>
+ <div class="mobile_slide_menu_container" id="mobile_slide_menu_wrap">
+  <div class="mobile_slide_menu slide_menu _slide_menu" id="mobile_slide_menu">
+   <ul class="nav navbar-nav navbar-right">
+    <div class="viewport-nav mobile _menu_wrap" style="position:relative">
+     <!-- 모바일 메뉴서랍내 프로필 -->
+     <input id="imagepath" type="hidden" value="/common/img/app_login.png"/>
+     <div class="profile-area">
+      <a class="btn nav-btn-icon profile no-padding btn-flat full-width" href="javascript:;" onclick="SITE_MEMBER.openLogin('Lw%3D%3D', 'null', null, 'Y');">
+       <div class="member-info guest full-width">
+        <span>
+         로그인이 필요합니다.
+        </span>
+        <button>
+         로그인
+        </button>
+       </div>
+      </a>
+      <div class="btn-group">
+      </div>
+     </div>
+     <li class="depth-01" data-code="m20250407674dc2896edf1" style="">
+      <a class="active active-real" data-has_child="N" data-is_folder_menu="N" data-url="index" href="/index" onclick="">
+       <span class="plain_name" data-hover="">
+        교육안내
+       </span>
+       <span class="_toggle_btn toggle-btn">
+       </span>
+      </a>
+     </li>
+     <li class="depth-01" data-code="m20250407eaa452e8314a3" style="">
+      <a class="" data-has_child="N" data-is_folder_menu="N" data-url="nvidia" href="/nvidia" onclick="">
+       <span class="plain_name" data-hover="">
+        교육 신청
+       </span>
+       <span class="_toggle_btn toggle-btn">
+       </span>
+      </a>
+     </li>
+     <li class="depth-01" data-code="m202504076ceb17fff9de5" style="">
+      <a class="" data-has_child="N" data-is_folder_menu="N" data-url="Location" href="/Location" onclick="">
+       <span class="plain_name" data-hover="">
+        커리큘럼
+       </span>
+       <span class="_toggle_btn toggle-btn">
+       </span>
+      </a>
+     </li>
+     <li class="depth-01" data-code="m202505218732de1133942" style="">
+      <a class="has_child" data-has_child="Y" data-is_folder_menu="Y" data-url="24" href="/24" onclick="">
+       <span class="plain_name" data-hover="">
+        게시판
+       </span>
+       <span class="_toggle_btn toggle-btn">
+       </span>
+      </a>
+      <ul data-index="4" style="height: 0px;">
+       <li class="depth-02" data-code="m20250417d925862ecc93d" style="">
+        <a class="" data-has_child="N" data-is_folder_menu="N" data-url="22" href="/22" onclick="" tabindex="-1">
+         <span class="plain_name" data-hover="">
+          ACADEMY 6기
+         </span>
+         <span class="_toggle_btn toggle-btn">
+         </span>
+        </a>
+       </li>
+       <li class="depth-02" data-code="m20250521e7576bd341b7a" style="">
+        <a class="" data-has_child="N" data-is_folder_menu="N" data-url="25" href="/25" onclick="" tabindex="-1">
+         <span class="plain_name" data-hover="">
+          ACADEMY 7기
+         </span>
+         <span class="_toggle_btn toggle-btn">
+         </span>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="depth-01" data-code="m20250422fc0cda88e6789" style="">
+      <a class="" data-has_child="N" data-is_folder_menu="N" data-url="23" href="/23" onclick="">
+       <span class="plain_name" data-hover="">
+        수시채용
+       </span>
+       <span class="_toggle_btn toggle-btn">
+       </span>
+      </a>
+     </li>
+    </div>
+   </ul>
+   <div class="im-mobile-slide-footer">
+   </div>
+  </div>
+  <button class="navbar-toggle close slide-close" onclick="MOBILE_SLIDE_MENU.slideNavToggle();" type="button">
+   <i aria-hidden="true" class="btm bt-times">
+   </i>
+   <span class="sr-only">
+    닫기
+   </span>
+  </button>
+  <style>
+   .new_header_site .mobile_slide_menu_container.slide_open .mobile_slide_menu,
+		.new_header_site .mobile_slide_menu_container .mobile_slide_menu,
+		.admin.new_header_mode .mobile_slide_menu_container.slide_open .mobile_slide_menu,
+		.admin.new_header_mode .mobile_slide_menu_container .mobile_slide_menu {
+			background: #fff !important;
+		}
+		.new_header_site .mobile_slide_menu_container .mobile_slide_menu .viewport-nav.mobile li li ul,
+		.admin.new_header_mode .mobile_slide_menu_container .mobile_slide_menu .viewport-nav.mobile li li ul {
+			background: transparent;
+		}
+		.mobile_slide_menu_container .mobile_slide_menu .profile-area {
+			background: #2b2b2b;
+			margin-bottom:0 ;
+		}
+		.mobile_slide_menu_container .mobile_slide_menu .profile-area .member-info,
+		.mobile_slide_menu_container .mobile_slide_menu .profile-area .btn-group,
+		.mobile_slide_menu_container .mobile_slide_menu .profile-area .member-info.guest button {
+			color: #fff;
+		}
+		.mobile_slide_menu_container .mobile_slide_menu .profile-area .member-info.guest button {
+				border-color:rgb(255,255,255) ;border-color:rgba(255,255,255,0.2) ;		}
+		.mobile_slide_menu_container .viewport-nav.mobile li li a.has_child.open > span,
+		.mobile_slide_menu_container .viewport-nav.mobile li li a.has_child.open:after,
+		.mobile_slide_menu_container .viewport-nav.mobile li li a span {
+			color: rgba(33, 33, 33, 0.89);
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li a {
+			color: rgba(33, 33, 33, 0.89);
+			letter-spacing: 0px;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li.use_sub_name:hover>a:not(.active)>.plain_name:before {
+			color: rgba(33, 33, 33, 0.89);
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li li.use_sub_name:hover>a:not(.active)>.plain_name {
+			color: transparent;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li li.use_sub_name:hover>a:not(.active)>.plain_name:before {
+			position: absolute;
+			color: rgba(33, 33, 33, 0.89);
+			left: auto;
+			right: auto;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li a.active-real {
+			background: #f5f5f5;
+			color: #111;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li a.active-real span,
+		.mobile_slide_menu_container .viewport-nav.mobile li a.has_child.open.active-real span {
+			color: #111;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li.depth-01 {
+			border-top: 1px solid #f3f3f3;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li.depth-01:last-child {
+			border-bottom: 1px solid #f3f3f3;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li.depth-01 ul{
+			display : none; 		}
+		.mobile_slide_menu_container .viewport-nav.mobile li.depth-01 > a {
+			font-size: 14px;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li li a {
+			font-size: 13px !important;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li li:last-child a,
+		.mobile_slide_menu_container .viewport-nav.mobile li li li:last-child a,
+		.mobile_slide_menu_container .viewport-nav.mobile li > ul.collapse,
+		.mobile_slide_menu_container .viewport-nav.mobile li li > ul.collapse,
+		.mobile_slide_menu_container .viewport-nav.mobile li > ul.collapsing[aria-expanded=false],
+		.mobile_slide_menu_container .viewport-nav.mobile li li > ul.collapsing[aria-expanded=false] {
+			margin-bottom : 0;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li > ul,
+		.mobile_slide_menu_container .viewport-nav.mobile li li > ul,
+		.mobile_slide_menu_container .viewport-nav.mobile li > ul.collapse.in,
+		.mobile_slide_menu_container .viewport-nav.mobile li li > ul.collapse.in,
+		.mobile_slide_menu_container .viewport-nav.mobile li > ul.collapsing[aria-expanded=true],
+		.mobile_slide_menu_container .viewport-nav.mobile li li > ul.collapsing[aria-expanded=true] {
+			margin-bottom: 14px;
+		}
+		.mobile_slide_menu_container .viewport-nav.mobile li li li:first-child a {
+			margin-top: 0;
+		}
+				.viewport-nav.mobile li a.has_child > .toggle-btn:after {
+							font-size: 13.3px;
+					}
+		.viewport-nav.mobile li li a.has_child > .toggle-btn:after {
+							font-size: 12.35px;
+					}
+		.navbar-nav .profile-more.open .dropdown-menu li > a {
+			background: transparent;
+			color: #212121;
+			padding: 8px 16px;
+		}
+						.im-globe .globe_icon {
+			display: inline-block;
+		}
+		.im-globe .globe_square,
+		.im-globe .globe_circle {
+			display: none !important;
+		}
+				.im-mobile-slide-footer {
+			background: #fff;
+			color: rgba(33, 33, 33, 0.89);
+		}
+		.im-mobile-slide-footer .btn {
+			color: rgba(33, 33, 33, 0.89);
+		}
+  </style>
+ </div>
+ <div class="pc_slide_menu_container" id="pc_slide_menu_wrap">
+  <div class="pc_slide_menu slide_menu _slide_menu" id="pc_slide_menu">
+   <button class="pc-navbar-toggle" onclick="PC_SLIDE_MENU.slideNavToggle();" type="button">
+    <i class="btm bt-times">
+    </i>
+   </button>
+   <div class="tse-scrollable _tse_scrollable">
+    <div class="tse-scrollbar" style="display: none;">
+     <div class="drag-handle">
+     </div>
+    </div>
+    <div class="tse-scroll-content" style="width: 300px; height: 680px;">
+     <div class="tse-content">
+      <div class="pc_slide_menu_logo">
+       <div class="pc_slide_menu_title">
+        <a href="/">
+         NVIDIA 인증 한컴 NVIDIA AI ACADEMY 부트캠프
+        </a>
+       </div>
+      </div>
+      <ul class="nav navbar-nav">
+       <div class="viewport-nav pc _menu_wrap" style="position:relative">
+        <li class="depth-01" data-code="m20250407674dc2896edf1" style="">
+         <a class="_fade_link active active-real" data-has_child="N" data-is_folder_menu="N" data-url="index" href="/index">
+          <span class="plain_name" data-hover="">
+           교육안내
+          </span>
+         </a>
+        </li>
+        <li class="depth-01" data-code="m20250407eaa452e8314a3" style="">
+         <a class="_fade_link" data-has_child="N" data-is_folder_menu="N" data-url="nvidia" href="/nvidia">
+          <span class="plain_name" data-hover="">
+           교육 신청
+          </span>
+         </a>
+        </li>
+        <li class="depth-01" data-code="m202504076ceb17fff9de5" style="">
+         <a class="_fade_link" data-has_child="N" data-is_folder_menu="N" data-url="Location" href="/Location">
+          <span class="plain_name" data-hover="">
+           커리큘럼
+          </span>
+         </a>
+        </li>
+        <li class="depth-01" data-code="m202505218732de1133942" style="">
+         <a class="_fade_link" data-has_child="Y" data-is_folder_menu="Y" data-url="24" href="/24">
+          <span class="plain_name" data-hover="">
+           게시판
+          </span>
+         </a>
+        </li>
+        <li class="depth-01" data-code="m20250422fc0cda88e6789" style="">
+         <a class="_fade_link" data-has_child="N" data-is_folder_menu="N" data-url="23" href="/23">
+          <span class="plain_name" data-hover="">
+           수시채용
+          </span>
+         </a>
+        </li>
+       </div>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <style>
+  @import url("https://vendor-cdn.imweb.me/css/montserrat.css");	.pc_slide_menu_container {
+		position   : fixed;
+		top        : 0;
+		bottom     : 0;
+		overflow-y : auto;
+		overflow-x : hidden;
+		width      : 0;
+		right      : 0;
+		z-index    : 9999;
+		width: 0;
+		visibility : visible;
+		display    : block;
+	}
+
+		.pc_slide_menu_container .pc_slide_menu_title a {
+	font-family : montserrat; font-size : 38px;
+		color                            : #fff;
+		word-wrap                        : break-word;
+		letter-spacing                   : 0px;
+		font-weight                      : bold;
+		font-style                       : ;
+	}
+	
+	.pc_slide_menu_container .slide_menu_backdrop {
+		background : #000;
+		opacity    : .5;
+		position   : fixed;
+		top        : 0;
+		right      : 0;
+		width      : 100%;
+		height     : 100%;
+		z-index    : 1100;
+	}
+
+	.pc_slide_menu_container .pc-navbar-toggle {
+		font-size        : 16px;
+		position         : absolute;
+		right            : 0;
+		top              : 0;
+		padding          : 9px 15px;
+		margin-top       : 8px;
+		margin-bottom    : 8px;
+		background-color : transparent;
+		background-image : none;
+		border           : 1px solid transparent;
+		border-radius    : 4px;
+		color            : rgba(255, 255, 255, 0.5);
+	}
+
+	.pc_slide_menu_container .pc-navbar-toggle:hover {
+		color : #ffffff;;
+	}
+
+	.pc_slide_menu_container .pc_slide_menu {
+		min-width  : 0;
+		width      : 300px;
+		position   : absolute;
+		top        : 0;
+		bottom     : 0;
+		left       : -300px;
+		background : #2f2f2f;
+		z-index    : 9999;
+		padding    : 40px 0 0 0;
+	}
+
+	.pc_slide_menu_container .pc_slide_menu.animation {
+		transition : transform 300ms ease 0s;
+		transform  : translate3d(0px, 0px, 0px);
+	}
+
+	.pc_slide_menu_container.slide_open .pc_slide_menu {
+		transform  : translate3d(300px, 0px, 0px);
+		overflow-y : auto;
+	}
+
+	.pc_slide_menu_container.right-slide .pc_slide_menu {
+		left  : auto;
+		right : -300px;
+	}
+
+	.pc_slide_menu_container.right-slide .pc_slide_menu.animation {
+		transition : transform 300ms ease 0s;
+		transform  : translate3d(0px, 0px, 0px);
+	}
+
+	.pc_slide_menu_container.right-slide.slide_open .pc_slide_menu {
+		transform : translate3d(-300px, 0px, 0px);
+	}
+
+	.pc_slide_menu_container .pc_slide_menu_logo {
+		text-align : center;
+		margin     : 10px 0;
+		padding    : 0 24px;
+	}
+
+	.pc_slide_menu_container .pc_slide_menu_logo img {
+		display            : inline-block;
+		max-width          : 100%;
+		height             : 64px;
+		margin-bottom      : 6px;
+	 image-rendering : -webkit-optimize-contrast;
+
+		}
+
+	.pc_slide_menu_container .nav.navbar-nav {
+		float      : none;
+		text-align : center;
+		padding    : 0 24px;
+	}
+
+	.pc_slide_menu .viewport-nav li.use_sub_name:hover>a>.plain_name:before {
+		color: #ffffff;
+		text-align: center ;
+		left: 0;
+		right: 0;
+	}
+
+	/* 우측 토글 버튼이 생기는 경우 대비 임시 여백(메뉴 폰트 크기가 20px을 넘어갈 정도로 큰 경우 조금 부족할 수 있음)*/
+	.pc_slide_menu .viewport-nav li.use_sub_name:hover>a.has_child>.plain_name:before {
+		margin-right: 14px;
+	}
+
+	.pc_slide_menu_container .nav.navbar-nav:before {
+		content        : '';
+		display        : inline-block !important;
+		vertical-align : top;
+	}
+
+	.pc_slide_menu_container .nav.navbar-nav .viewport-nav {
+		max-width      : 100%;
+		max-height     : 100%;
+		display        : inline-block;
+		vertical-align : middle;
+	}
+	.pc_slide_menu_container .viewport-nav li.depth-01 ul{
+		display : none;
+	}
+	.pc_slide_menu_container .viewport-nav li > ul {
+		padding-bottom : 1px;
+	}
+	.pc_slide_menu_container .viewport-nav li > a {
+		font-family    : Apple SD Gothic Neo, Malgun Gothic, Nanum Gothic, Meiryo, sans-serif, serif, Arial;
+		font-size      : 13px;
+		letter-spacing : 1px;
+		color          : rgba(255, 255, 255, 0.5);
+		padding-top    : 1px;
+		padding-bottom : 1px;
+		display        : inline-block;
+	}
+
+	.pc_slide_menu_container .viewport-nav li li > a {
+		font-size      : 12px;
+		padding-top    : 0.8px;
+		padding-bottom : 0.8px;
+	}
+
+	.pc_slide_menu_container .viewport-nav li:first-child {
+		margin-top : 0;
+	}
+
+	.pc_slide_menu_container .viewport-nav li > a:hover {
+		color : #ffffff;
+	}
+
+	.pc_slide_menu_container .viewport-nav li a.has_child > .toggle-btn:after {
+		font-size      : 8px;
+		color          : rgba(255, 255, 255, 0.5);
+	}
+	.pc_slide_menu_container .viewport-nav li li a.has_child > .toggle-btn:after {
+		font-size      : 8px;
+	}
+		.pc_slide_menu_container .viewport-nav li a.active-real {
+		color : #ffffff;
+	}
+	.pc_slide_menu_container .viewport-nav li a.active-real > .toggle-btn:after {
+		color : #ffffff;
+	}
+	
+
+		.pc_slide_menu_container .viewport-nav li li a {
+		margin-left: 0;
+	}
+	.pc_slide_menu_container .viewport-nav li li li a {
+		margin-left: 0;
+	}
+ </style>
+ <header id="doz_header_wrap">
+  <div data-newheader="Y" id="doz_header">
+   <div class="new_org_header _new_org_header">
+    <div class="first_scroll_fixed" id="inline_header_normal" style="min-height: 30px;">
+     <div class="extend inline-section-wrap fixed_transform _fixed_header_section" data-type="section-wrap" id="s202504074e4963f8108c5">
+      <div class="section_bg _section_bg fixed_transform _interactive_bg">
+      </div>
+      <div class="section_bg_color _section_bg_color fixed_transform" style="background-color:#fff;  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+      </div>
+      <div class="inline-inside _inline-inside" data-type="inside">
+       <div class="inline-section" data-type="section" section-code="s202504074e4963f8108c5">
+        <div class="inline-col-group inline-col-group-left" data-col-group="left" data-type="col-group" style="width:200px;">
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w2025040798cc8b1784f49">
+           <div class="_widget_data" data-widget-type="inline_logo">
+            <div class="widget inline_widget logo text_inline" id="logo_w2025040798cc8b1784f49">
+             <div class="img_box _img_box" style="position: relative;">
+              <a class="" href="/">
+               <span class="sr-only">
+                NVIDIA 인증 한컴 NVIDIA AI ACADEMY 부트캠프
+               </span>
+               <img alt="NVIDIA 인증 한컴 NVIDIA AI ACADEMY 부트캠프" class="normal_logo _front_img" src="https://cdn.imweb.me/thumbnail/20250605/0e9e41d2bc6cf.png" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;" width="121.600997506"/>
+               <img alt="NVIDIA 인증 한컴 NVIDIA AI ACADEMY 부트캠프" class="scroll_logo fixed_transform" src="https://cdn.imweb.me/thumbnail/20250605/0e9e41d2bc6cf.png" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;" width="121.600997506"/>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="inline-col-group inline-col-group-center" data-col-group="center" data-type="col-group">
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w20250407afbacb37f1d95">
+           <div class="_widget_data" data-widget-type="inline_menu">
+            <ul class="nav navbar-nav _inline_menu_container sub_mega_drop" style="visibility: hidden">
+             <div class="viewport-nav desktop _main_menu">
+              <li class="dropdown _show_m20250407674dc2896edf1" data-code="m20250407674dc2896edf1" id="dropdown_m20250407674dc2896edf1" style="">
+               <a class="fixed_transform dropdown-toggle disabled _header_dropdown active _fade_link" data-toggle="dropdown" data-url="index" href="/index">
+                <span class="_txt_m20250407674dc2896edf1 plain_name" data-hover="">
+                 교육안내
+                </span>
+               </a>
+              </li>
+              <li class="dropdown _show_m20250407eaa452e8314a3" data-code="m20250407eaa452e8314a3" id="dropdown_m20250407eaa452e8314a3" style="">
+               <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="nvidia" href="/nvidia">
+                <span class="_txt_m20250407eaa452e8314a3 plain_name" data-hover="">
+                 교육 신청
+                </span>
+               </a>
+              </li>
+              <li class="dropdown _show_m202504076ceb17fff9de5" data-code="m202504076ceb17fff9de5" id="dropdown_m202504076ceb17fff9de5" style="">
+               <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="Location" href="/Location">
+                <span class="_txt_m202504076ceb17fff9de5 plain_name" data-hover="">
+                 커리큘럼
+                </span>
+               </a>
+              </li>
+              <li class="dropdown _show_m202505218732de1133942" data-code="m202505218732de1133942" id="dropdown_m202505218732de1133942" style="">
+               <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="24" href="/24">
+                <span class="_txt_m202505218732de1133942 plain_name" data-hover="">
+                 게시판
+                </span>
+               </a>
+              </li>
+              <li class="dropdown _show_m20250422fc0cda88e6789" data-code="m20250422fc0cda88e6789" id="dropdown_m20250422fc0cda88e6789" style="">
+               <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="23" href="/23">
+                <span class="_txt_m20250422fc0cda88e6789 plain_name" data-hover="">
+                 수시채용
+                </span>
+               </a>
+              </li>
+             </div>
+             <div class="_main_clone_menu_wrap" style="position: absolute; top: -9999px; left: -9999px;">
+              <div class="viewport-nav desktop _main_clone_menu main_clone_menu">
+               <li class="dropdown _show_m20250407674dc2896edf1" data-code="m20250407674dc2896edf1" id="dropdown_m20250407674dc2896edf1" style="">
+                <a class="fixed_transform dropdown-toggle disabled _header_dropdown active _fade_link" data-toggle="dropdown" data-url="index" href="/index">
+                 <span class="_txt_m20250407674dc2896edf1 plain_name" data-hover="">
+                  교육안내
+                 </span>
+                </a>
+               </li>
+               <li class="dropdown _show_m20250407eaa452e8314a3" data-code="m20250407eaa452e8314a3" id="dropdown_m20250407eaa452e8314a3" style="">
+                <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="nvidia" href="/nvidia">
+                 <span class="_txt_m20250407eaa452e8314a3 plain_name" data-hover="">
+                  교육 신청
+                 </span>
+                </a>
+               </li>
+               <li class="dropdown _show_m202504076ceb17fff9de5" data-code="m202504076ceb17fff9de5" id="dropdown_m202504076ceb17fff9de5" style="">
+                <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="Location" href="/Location">
+                 <span class="_txt_m202504076ceb17fff9de5 plain_name" data-hover="">
+                  커리큘럼
+                 </span>
+                </a>
+               </li>
+               <li class="dropdown _show_m202505218732de1133942" data-code="m202505218732de1133942" id="dropdown_m202505218732de1133942" style="">
+                <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="24" href="/24">
+                 <span class="_txt_m202505218732de1133942 plain_name" data-hover="">
+                  게시판
+                 </span>
+                </a>
+               </li>
+               <li class="dropdown _show_m20250422fc0cda88e6789" data-code="m20250422fc0cda88e6789" id="dropdown_m20250422fc0cda88e6789" style="">
+                <a class="fixed_transform dropdown-toggle disabled _header_dropdown _fade_link" data-toggle="dropdown" data-url="23" href="/23">
+                 <span class="_txt_m20250422fc0cda88e6789 plain_name" data-hover="">
+                  수시채용
+                 </span>
+                </a>
+               </li>
+              </div>
+             </div>
+            </ul>
+            <!-- 템플릿별 레이아웃 구조 -->
+            <!-- 템플릿별 레이아웃 구조 -->
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="inline-col-group inline-col-group-right" data-col-group="right" data-type="col-group" style="width:200px;">
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w202505231d3e9aaa9ee62">
+           <div class="_widget_data" data-widget-type="inline_button">
+            <div class="widget inline_widget login_btn button button_text txt_l text-xx-small">
+             <div>
+              <div class="inline-blocked inline-btn-item">
+               <a aria-label="버튼" class="_fade_link fixed_transform btn_text btn_1ed52048dd468 btn_custom" data-original-title="홈" data-placement="bottom" data-toggle="tooltip" href="https://edu.hancomacademy.com/" style="border-radius:0px; ">
+                <span class="icon_class fixed_transform">
+                 <i aria-hidden="true" class="btm bt-home">
+                 </i>
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w202505237be8485e40bc3">
+           <div class="_widget_data" data-widget-type="inline_menu_btn">
+            <div class="widget inline_widget icon_type_menu st00">
+             <a class="_no_hover fixed_transform inline-blocked" href="javascript:;" onclick="PC_SLIDE_MENU.slideNavToggle($(this))">
+              <span class="holder icon_code simple icon-menu" id="inline_menu_alarm_badge">
+              </span>
+              <span class="text">
+               MENU
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="text-center _mega_dropdown_container_w20250407afbacb37f1d95" data-widget-type="inline_menu" id="dropdown_w20250407afbacb37f1d95" style="display: none; top: 90px;">
+       <div class="clearfix mega_dropdown_wrap _mega_dropdown_wrap">
+        <div class="tse-scrollable _tse_scrollable">
+         <div class="tse-scrollbar" style="display: none;">
+          <div class="drag-handle">
+          </div>
+         </div>
+         <div class="tse-scroll-content" style="width: 100px; height: 100px;">
+          <div class="tse-content">
+           <div class="inline-blocked" style="max-width: 2000px;">
+            <div class="mega_dropdown clearfix _mega_dropdown_sync" style="visibility: visible;">
+             <div class="title_menu _item clear-both" data-code="m20250407674dc2896edf1" style="">
+              <a class="active _title_anchor _fade_link" data-url="index" href="/index">
+               <span class="_txt_m20250407674dc2896edf1 _title_txt plain_name" data-hover="">
+                교육안내
+               </span>
+              </a>
+             </div>
+             <div class="title_menu _item" data-code="m20250407eaa452e8314a3" style="">
+              <a class="_title_anchor _fade_link" data-url="nvidia" href="/nvidia">
+               <span class="_txt_m20250407eaa452e8314a3 _title_txt plain_name" data-hover="">
+                교육 신청
+               </span>
+              </a>
+             </div>
+             <div class="title_menu _item" data-code="m202504076ceb17fff9de5" style="">
+              <a class="_title_anchor _fade_link" data-url="Location" href="/Location">
+               <span class="_txt_m202504076ceb17fff9de5 _title_txt plain_name" data-hover="">
+                커리큘럼
+               </span>
+              </a>
+             </div>
+             <div class="title_menu _item" data-code="m202505218732de1133942" style="">
+              <a class="_title_anchor _fade_link" data-url="24" href="/24">
+               <span class="_txt_m202505218732de1133942 _title_txt plain_name" data-hover="">
+                게시판
+               </span>
+              </a>
+              <ul class="sub_menu">
+               <li class="" data-code="m20250417d925862ecc93d" style="">
+                <a class="_fade_link _txt_m20250417d925862ecc93d" data-url="22" href="/22">
+                 <span class="plain_name" data-hover="">
+                  ACADEMY 6기
+                 </span>
+                </a>
+               </li>
+               <li class="" data-code="m20250521e7576bd341b7a" style="">
+                <a class="_fade_link _txt_m20250521e7576bd341b7a" data-url="25" href="/25">
+                 <span class="plain_name" data-hover="">
+                  ACADEMY 7기
+                 </span>
+                </a>
+               </li>
+              </ul>
+             </div>
+             <div class="title_menu _item" data-code="m20250422fc0cda88e6789" style="">
+              <a class="_title_anchor _fade_link" data-url="23" href="/23">
+               <span class="_txt_m20250422fc0cda88e6789 _title_txt plain_name" data-hover="">
+                수시채용
+               </span>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div>
+     </div>
+    </div>
+    <div class="first_scroll_fixed" id="inline_header_mobile" style="min-height: 30px;">
+     <div class="inline-section-wrap fixed_transform _fixed_header_section" data-type="section-wrap" id="s20250407021283b5fe733">
+      <div class="section_bg _section_bg fixed_transform _interactive_bg">
+      </div>
+      <div class="section_bg_color _section_bg_color fixed_transform" style="background-color:#ffffff;  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+      </div>
+      <div class="inline-inside _inline-inside" data-type="inside">
+       <div class="inline-section" data-type="section" section-code="s20250407021283b5fe733">
+        <div class="inline-col-group inline-col-group-left" data-col-group="left" data-type="col-group" style="width:92px;">
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w20250407be7e4165eeff2">
+           <div class="_widget_data" data-widget-type="inline_menu_btn">
+            <div class="widget inline_widget icon_type_menu st00">
+             <a class="_no_hover fixed_transform inline-blocked" href="javascript:;" onclick="MOBILE_SLIDE_MENU.slideNavToggle($(this))">
+              <span class="holder icon_code btm bt-bars" id="inline_menu_alarm_badge">
+              </span>
+              <span class="text">
+               MENU
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="inline-col-group inline-col-group-center" data-col-group="center" data-type="col-group">
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w20250407e28c062319c29">
+           <div class="_widget_data" data-widget-type="inline_logo">
+            <div class="widget inline_widget logo text_inline" id="logo_w20250407e28c062319c29">
+             <div class="logo_title">
+              <a class="fixed_transform" href="/" style="display: block">
+               NVIDIA 인증 한컴 NVIDIA AI ACADEMY 부트캠프
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="inline-col-group inline-col-group-right" data-col-group="right" data-type="col-group" style="width:92px;">
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w202504074bd7f110d5d40">
+           <div class="_widget_data" data-widget-type="inline_login_btn">
+            <div class="widget inline_widget login_btn button txt_l text-xx-small">
+             <div class="btn-wrap">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="inline-col" data-type="grid">
+          <div class="inline-widget" data-type="widget" id="w20250407843493eadf9d6">
+           <div class="_widget_data" data-widget-type="inline_login_btn">
+            <div class="widget inline_widget login_btn button button_text txt_l text-xx-small">
+             <div class="btn-wrap">
+              <div class="inline-blocked login_btn_item">
+               <a class="_fade_link btn_text btn_59e1777be3ca1 btn_custom" href="javascript:;" onclick="SITE_MEMBER.openLogin('Lw%3D%3D', 'null', null, 'Y');" style="border-radius:0px; ">
+                <span class="sr-only">
+                 로그인
+                </span>
+                <span class="icon_class">
+                 <i aria-hidden="true" class="fixed_transform simple icon-user">
+                 </i>
+                </span>
+                <span class="text fixed_transform no_text">
+                </span>
+               </a>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div>
+     </div>
+     <div class="inline-section-wrap" data-type="carousel_menu" id="mobile_carousel_menu">
+      <div class="inline-inside _inline-inside">
+       <div class="mobile_carousel_nav fixed_transform _mobile_nav" id="mobile_carousel_nav">
+        <div class="mobile_nav_depth depth_0 depth_first st05 _mobile_navigation_menu" id="mobile_carousel_menu_0">
+         <div class="nav-item _item active" data-code="m20250407674dc2896edf1" data-url="index">
+          <a class="_fade_link" href="/index" style="">
+           <span class="plain_name" data-hover="">
+            교육안내
+           </span>
+          </a>
+         </div>
+         <div class="nav-item _item" data-code="m20250407eaa452e8314a3" data-url="nvidia">
+          <a class="_fade_link" href="/nvidia" style="">
+           <span class="plain_name" data-hover="">
+            교육 신청
+           </span>
+          </a>
+         </div>
+         <div class="nav-item _item" data-code="m202504076ceb17fff9de5" data-url="Location">
+          <a class="_fade_link" href="/Location" style="">
+           <span class="plain_name" data-hover="">
+            커리큘럼
+           </span>
+          </a>
+         </div>
+         <div class="nav-item _item" data-code="m202505218732de1133942" data-url="24">
+          <a class="_fade_link" href="/24" style="">
+           <span class="plain_name" data-hover="">
+            게시판
+           </span>
+          </a>
+         </div>
+         <div class="nav-item _item" data-code="m20250422fc0cda88e6789" data-url="23">
+          <a class="_fade_link" href="/23" style="">
+           <span class="plain_name" data-hover="">
+            수시채용
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </header>
+ <div class="section_wrap visual_section pc_section mobile_hide section_first _section_first" doz_category="visual" doz_footer_repeat="N" doz_fullpage="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_type="section" id="s20250422bd1abfa27d668" style="">
+  <div class="visual_section _visual_section" id="visual_s20250422bd1abfa27d668">
+   <!-- 비주얼 영역이
+없는 경우 .no-visual 추가 -->
+   <!-- 비주얼 영역-->
+   <div class="owl-carousel owl-theme visual_area _slide owl-loaded">
+    <div class="owl-item" style="width: 100%; float: none;">
+     <div class="item holder section" style="background-image:url(https://cdn.imweb.me/thumbnail/20250521/ca2de82a4798b.png); background-color:rgba(221, 221, 221, 0); background-repeat : no-repeat; background-size : cover; background-position : 50% 50%;">
+      <div class="op _op" style="position: relative;z-index: 11; ">
+       <div class="header-content _visual_height m_ratio">
+        <div class="text _text_wrap">
+         <div class="text-wrap _text fr-view">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- end.비주얼 영역 -->
+  </div>
+ </div>
+ <div class="section_wrap visual_section mobile_section mobile_section_first" doz_category="visual" doz_footer_repeat="N" doz_fullpage="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_type="section" id="s2025052396fab43f50be6" style="">
+  <div class="visual_section _visual_section" id="visual_s2025052396fab43f50be6">
+   <!-- 비주얼 영역이
+없는 경우 .no-visual 추가 -->
+   <!-- 비주얼 영역-->
+   <div class="owl-carousel owl-theme visual_area _slide owl-loaded">
+    <div class="owl-item" style="width: 100%; float: none;">
+     <div class="item holder section" style="background-image:url(https://cdn.imweb.me/thumbnail/20250523/cd547a9c23d9d.png); background-color:rgba(221, 221, 221, 0); background-repeat : no-repeat; background-size : cover; background-position : 50% 50%;">
+      <div class="op _op" style="position: relative;z-index: 11; ">
+       <a class="visual_link" href="/nvidia" onclick="" target="">
+       </a>
+       <div class="header-content _visual_height m_ratio">
+        <div class="text _text_wrap">
+         <div class="text-wrap _text fr-view">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- end.비주얼 영역 -->
+  </div>
+ </div>
+ <div class="section_wrap mobile_section side_basic grid_gutter_0 grid_v_gutter_27" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523daf45aaec9ffa" style="; ; background-color:#000000;;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="background-color:#000000;  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w202505238cc9e2db401f6">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="Y" data-widget-type="button">
+        <div class="widget button txt_c">
+         <div class="button_wrap">
+          <div class="inline-blocked">
+           <a class="btn btn_f9d711679a0fd btn-primary _fade_link" href="/nvidia" style=" border-radius:px">
+            신청하기
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section mobile_hide side_basic grid_gutter_7 grid_v_gutter_7" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250407d4c2a14043f34" style="; ; background-color:#000000;;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="background-color:#000000;  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w20250422529ea86b428dd">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="N" data-widget-type="button">
+        <div class="widget button txt_c">
+         <div class="button_wrap">
+          <div class="inline-blocked">
+           <a class="btn btn_c454232bfc0bd btn-default _fade_link" href="/nvidia" style=" border-radius:px">
+            신청하기
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w202504078d7117c5915e2">
+       <div class="_widget_data _ds_animated_except" data-widget-name="여백" data-widget-parent-is-mobile="N" data-widget-type="padding">
+        <div class="widget padding" data-height="17" style="margin-top:px; margin-bottom:px;">
+         <div id="padding_w202504078d7117c5915e2" style="width:100%; min-height:1px; height:17px; ">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523d8557cb336a71" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w202505236281b09e975a9">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="Y" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w202505236281b09e975a9" src="https://cdn.imweb.me/thumbnail/20250523/22e209323408d.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 0px; height: 0px; margin-left: auto; margin-right: auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: 0px; margin-left: 0px; width: 0px; height: 0px; background-image: url("https://cdn.imweb.me/thumbnail/20250523/22e209323408d.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s202505232060c78300489" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+    <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+     <div doz_type="widget" id="w2025052369db25d61398b">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="Y" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w2025052369db25d61398b">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w202505237d7ff28f17220">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="Y" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w202505237d7ff28f17220" src="https://cdn.imweb.me/thumbnail/20250523/4608ff03793b4.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 0px; height: 0px; margin-left: auto; margin-right: auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: 0px; margin-left: 0px; width: 0px; height: 0px; background-image: url("https://cdn.imweb.me/thumbnail/20250523/4608ff03793b4.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523efddfa12bc6a2" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250523ceecf84f98256">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="Y" data-widget-type="hr">
+        <div class="widget line type01 _hide" id="hr_w20250523ceecf84f98256">
+         <div class="line_box holder" style="width:100%; ">
+          <hr style=""/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250523f304add9630fa">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="Y" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w20250523f304add9630fa" src="https://cdn.imweb.me/thumbnail/20250523/aafc0d2806f30.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 0px; height: 0px; margin: 177px auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: 0px; margin-left: 0px; width: 0px; height: 0px; background-image: url("https://cdn.imweb.me/thumbnail/20250523/aafc0d2806f30.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic grid_gutter_0 grid_v_gutter_0" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523b866eb74a0029" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250523a92bfa145f5c6">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="Y" data-widget-type="button">
+        <div class="widget button txt_c">
+         <div class="button_wrap">
+          <div class="inline-blocked">
+           <a class="btn btn_adc5b928555c5 btn-primary _fade_link" href="https://www.work24.go.kr/cm/z/b/0210/openLginPage.do?loginMessage=3&amp;forwardUrl=/hr/h/a/1100/selectIssueRequestPost.do" style=" border-radius:px" target="_blank">
+            내일배움카드 신청하기
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523c8073b76d5df9" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+    <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+     <div doz_type="widget" id="w202505233cb55618ded75">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="Y" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w202505233cb55618ded75">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250523a94f3578dddd8">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="Y" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w20250523a94f3578dddd8" src="https://cdn.imweb.me/thumbnail/20250523/d208849597681.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 0px; height: 0px; margin-left: auto; margin-right: auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: 0px; margin-left: 0px; width: 0px; height: 0px; background-image: url("https://cdn.imweb.me/thumbnail/20250523/d208849597681.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250604dc0ddde9d3ed2">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="Y" data-widget-type="button">
+        <div class="widget button txt_c">
+         <div class="button_wrap">
+          <div class="inline-blocked">
+           <a class="btn btn_6f9478f766074 btn-primary" href="/download.cm?tk=YToyOntpOjA7czoxMzoiMTBkY2JlY2RmNzJiNiI7aToxO3M6MjI6ImYyMDI1MDYwNDM5MTVkZDRjNmNlYTYiO30=" style=" border-radius:px">
+            7기 모집요강 다운로드
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523267ae44bc3ed6" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+    <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+     <div doz_type="widget" id="w202505234ab9382fab094">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="Y" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w202505234ab9382fab094">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250523e8da9a0a1b96e">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="Y" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w20250523e8da9a0a1b96e" src="https://cdn.imweb.me/thumbnail/20250523/9769e1a9b78da.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 0px; height: 0px; margin-left: auto; margin-right: auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: 0px; margin-left: 0px; width: 0px; height: 0px; background-image: url("https://cdn.imweb.me/thumbnail/20250523/9769e1a9b78da.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s202505238979e64e3aeb3" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+    <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+     <div doz_type="widget" id="w20250523c870abcb96d4a">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="Y" data-widget-type="image">
+       <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+        <div class="_img_box img_wrap">
+         <img alt="" class="org_image" id="img_w20250523c870abcb96d4a" src="https://cdn.imweb.me/thumbnail/20250523/2b61ac70283c1.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 0px; height: 0px; margin-left: auto; margin-right: auto;"/>
+         <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: 0px; margin-left: 0px; width: 0px; height: 0px; background-image: url("https://cdn.imweb.me/thumbnail/20250523/2b61ac70283c1.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section mobile_hide side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250521a02ff0ad839d6" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w20250521940880b004f85">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="N" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w20250521940880b004f85" src="https://cdn.imweb.me/thumbnail/20250521/0de9596b455d9.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 1250px; height: 560px; margin: -2px auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: -280px; margin-left: -625px; width: 1250px; height: 560px; background-image: url("https://cdn.imweb.me/thumbnail/20250521/0de9596b455d9.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="doz_row" doz_grid="12" doz_type="row">
+    <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+     <div doz_type="widget" id="w20250521f5ed3d56816b5">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="N" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w20250521f5ed3d56816b5">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section mobile_hide side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s2025052196e1e1bd69992" style="; ; background-color:rgba(179, 179, 179, 0);;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="background-color:rgba(179, 179, 179, 0); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00b3b3b3,endColorstr=#00b3b3b3);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00b3b3b3,endColorstr=#00b3b3b3);	zoom: 1; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w20250521a503b550eceb7">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="N" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w20250521a503b550eceb7" src="https://cdn.imweb.me/thumbnail/20250521/331e468067fe2.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 1250px; height: 560px; margin: 0px auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: -280px; margin-left: -625px; width: 1250px; height: 560px; background-image: url("https://cdn.imweb.me/thumbnail/20250521/331e468067fe2.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="doz_row" doz_grid="12" doz_type="row">
+    <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+     <div doz_type="widget" id="w202505215b391dc03674a">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="N" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w202505215b391dc03674a">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section mobile_hide side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250521c87cd16011018" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w202505211dc802ec808e4">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="N" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap" style="height: 550px;">
+          <img alt="" class="org_image" id="img_w202505211dc802ec808e4" src="https://cdn.imweb.me/thumbnail/20250521/1c3c438228c67.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: auto; height: 550px; margin: 0px auto;"/>
+          <div class="_hover_image hover_img" style='position: relative; margin: -550px auto auto; width: 1228px; height: 550px; background-image: url("https://cdn.imweb.me/thumbnail/20250521/1c3c438228c67.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; top: 0px; left: 0px;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="doz_row" doz_grid="12" doz_type="row">
+    <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+     <div doz_type="widget" id="w20250521613046e9c40f5">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="N" data-widget-type="button">
+       <div class="widget button txt_c">
+        <div class="button_wrap">
+         <div class="inline-blocked">
+          <a class="btn btn_2f694094434e5 btn-default _fade_link" href="https://www.work24.go.kr/cm/z/b/0210/openLginPage.do?loginMessage=3&amp;forwardUrl=/hr/h/a/1100/selectIssueRequestPost.do" style=" border-radius:5px">
+           내일배움카드 신청하기
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section mobile_hide side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250422e0d66b1e131af" style="; ; background-color:rgba(228, 228, 228, 0);;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="background-color:rgba(228, 228, 228, 0); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00e4e4e4,endColorstr=#00e4e4e4);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00e4e4e4,endColorstr=#00e4e4e4);	zoom: 1; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="doz_row" doz_grid="12" doz_type="row">
+    <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+     <div doz_type="widget" id="w20250521db2d371340b25">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="N" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w20250521db2d371340b25">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w2025052120f3bb2633f48">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="N" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap" style="height: 556px;">
+          <img alt="" class="org_image" id="img_w2025052120f3bb2633f48" src="https://cdn.imweb.me/thumbnail/20250521/38ab4b7acc526.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: auto; height: 556px; margin: 0px auto;"/>
+          <div class="_hover_image hover_img" style='position: relative; margin: -556px auto auto; width: 1241px; height: 556px; background-image: url("https://cdn.imweb.me/thumbnail/20250521/38ab4b7acc526.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; top: 0px; left: 0px;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="doz_row" doz_grid="12" doz_type="row">
+    <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+     <div doz_type="widget" id="w202506048734fec1713ed">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="N" data-widget-type="button">
+       <div class="widget button txt_c">
+        <div class="button_wrap">
+         <div class="inline-blocked">
+          <a class="btn btn_75c09361b39ca btn-lg btn-primary" href="/download.cm?tk=YToyOntpOjA7czoxMzoiZGZhMTgxNDIwZTUyYSI7aToxO3M6MjI6ImYyMDI1MDYwNDRjZTM4NzBiNzJjNmYiO30=" style=" border-radius:px">
+           7기 모집요강 다운로드
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="doz_row" doz_grid="12" doz_type="row">
+    <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+     <div doz_type="widget" id="w202505215638ffc9c26c1">
+      <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="N" data-widget-type="hr">
+       <div class="widget line type01 _hide" id="hr_w202505215638ffc9c26c1">
+        <div class="line_box holder" style="width:100%; ">
+         <hr style=""/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section mobile_hide side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250521dc32411e4501a" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w202504223bfadedcf80c8">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="이미지" data-widget-parent-is-mobile="N" data-widget-type="image">
+        <div class="widget image _image_wrap text_position_bottom hover_text_position_bottom visibility hover_image_hidden org_size hover_img_hide">
+         <div class="_img_box img_wrap">
+          <img alt="" class="org_image" id="img_w202504223bfadedcf80c8" src="https://cdn.imweb.me/thumbnail/20250521/3b96f5311d4aa.png" style="visibility: visible; image-rendering: -webkit-optimize-contrast; display: inline-block; width: 1250px; height: 560px; margin: 23px auto;"/>
+          <div class="_hover_image hover_img" style='position: absolute; top: 50%; left: 50%; margin-top: -280px; margin-left: -625px; width: 1250px; height: 560px; background-image: url("https://cdn.imweb.me/thumbnail/20250521/3b96f5311d4aa.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;'>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-12" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w2025042236a5b53ce1767">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="버튼" data-widget-parent-is-mobile="N" data-widget-type="button">
+        <div class="widget button txt_c">
+         <div class="button_wrap">
+          <div class="inline-blocked">
+           <a class="btn btn_2f694094434e5 btn-default _fade_link" href="/Location" style=" border-radius:5px">
+            세부 교육과정 소개
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap visual_section pc_section mobile_hide" doz_category="visual" doz_footer_repeat="N" doz_fullpage="N" doz_header_repeat="N" doz_mobile_hide="Y" doz_mobile_section="N" doz_type="section" id="s202505215ff65e35a948d" style="">
+  <div class="visual_section _visual_section" id="visual_s202505215ff65e35a948d">
+   <!-- 비주얼 영역이
+없는 경우 .no-visual 추가 -->
+   <!-- 비주얼 영역-->
+   <div class="owl-carousel owl-theme visual_area _slide owl-loaded">
+    <div class="owl-item" style="width: 100%; float: none;">
+     <div class="item holder section" style="background-image:url(https://cdn.imweb.me/thumbnail/20250521/5f528ebfca4c9.png); background-color:rgba(228, 228, 228, 0); background-repeat : no-repeat; background-size : cover; background-position : 50% 50%;">
+      <div class="op _op" style="position: relative;z-index: 11; ">
+       <div class="header-content _visual_height m_ratio">
+        <div class="text _text_wrap">
+         <div class="text-wrap _text fr-view">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- end.비주얼 영역 -->
+  </div>
+ </div>
+ <div class="section_wrap mobile_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="N" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="Y" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s20250523a55ab97c01cf8" style="; ; ;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w20250523505852e9b5beb">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="Y" data-widget-type="text">
+        <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w20250523505852e9b5beb">
+         <div class="text-table">
+          <div>
+           <p style="text-align: center;">
+            <span style="font-size: 22px;">
+             <strong>
+              NVIDIA 교육과정 문의
+             </strong>
+            </span>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row col-xdz col-xdz-12" doz_type="row" doz_xdz="12">
+     <div class="col-dz col-dz- col-xdz col-xdz-12" doz_type="grid" doz_xdz="12">
+      <div doz_type="widget" id="w2025052309e0621733405">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="지도" data-widget-parent-is-mobile="Y" data-widget-type="map">
+        <div class="widget">
+         <div class="google-map" id="map_w2025052309e0621733405">
+          <div id="gmap_w2025052309e0621733405" style="height: 309px;">
+           <div style="height: 100%; width: 100%;">
+            <div style="overflow: hidden;">
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <div class="section_wrap pc_section side_basic" doz_aside="N" doz_category="default" doz_change_mobile="Y" doz_extend="N" doz_footer_repeat="N" doz_header_repeat="N" doz_mobile_hide="N" doz_mobile_section="N" doz_side_margin="0" doz_side_width="230" doz_type="section" id="s202505200d12b0a0f8c6a" style="; ; background-color:rgba(155, 155, 155, 0);;">
+  <div class="section_bg _section_bg _interactive_bg" style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <div class="section_bg_color _section_bg_color" style="background-color:rgba(155, 155, 155, 0); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#009b9b9b,endColorstr=#009b9b9b);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#009b9b9b,endColorstr=#009b9b9b);	zoom: 1; position: absolute;left: 0;top: 0;right: 0; bottom: 0;">
+  </div>
+  <main>
+   <div class="inside" doz_type="inside">
+    <div class="doz_row hidden-xs" doz_flexible="N" doz_grid="12" doz_type="row" hidden_xs="Y">
+     <div class="col-dz col-dz-12" doz_flexible="N" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w20250521a6d052ed78bbb">
+       <div class="_widget_data _ds_animated_except" data-widget-name="여백" data-widget-parent-is-mobile="N" data-widget-type="padding">
+        <div class="widget padding" data-height="59" style="margin-top:px; margin-bottom:px;">
+         <div id="padding_w20250521a6d052ed78bbb" style="width:100%; min-height:1px; height:59px; ">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row hidden-xs" doz_flexible="N" doz_grid="12" doz_type="row" hidden_xs="Y">
+     <div class="col-dz col-dz-12" doz_flexible="N" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w202505207a4fa4ff0f664">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="N" data-widget-type="text">
+        <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w202505207a4fa4ff0f664">
+         <div class="text-table">
+          <div>
+           <h3 style="text-align: center;">
+            <span style="font-size: 30px;">
+             <strong>
+              NVIDIA 교육과정 문의
+             </strong>
+            </span>
+           </h3>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row hidden-xs" doz_flexible="N" doz_grid="12" doz_type="row" hidden_xs="Y">
+     <div class="col-dz col-dz-12" doz_flexible="N" doz_grid="12" doz_type="grid">
+      <div doz_type="widget" id="w20250520f73d97f060658">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="지도" data-widget-parent-is-mobile="N" data-widget-type="map">
+        <div class="widget">
+         <div class="google-map" id="map_w20250520f73d97f060658">
+          <div id="gmap_w20250520f73d97f060658" style="height: 392px;">
+           <div style="height: 100%; width: 100%;">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row" doz_flexible="Y" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-3" doz_flexible="Y" doz_grid="3" doz_order="1" doz_type="grid">
+      <div class="doz_row" doz_flexible="N" doz_grid="3" doz_order="1" doz_type="row">
+       <div class="col-dz col-dz-3" doz_flexible="N" doz_grid="3" doz_type="grid">
+        <div doz_type="widget" id="w202505214c2a77fdea578">
+         <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="N" data-widget-type="hr">
+          <div class="widget line type01 _hide" id="hr_w202505214c2a77fdea578">
+           <div class="line_box holder" style="width:100%; ">
+            <hr style="border-top-width:1px; border-color:rgba(0, 0, 0, 0.75);"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="doz_row" doz_flexible="N" doz_grid="3" doz_order="2" doz_type="row">
+       <div class="col-dz col-dz-3" doz_flexible="N" doz_grid="3" doz_type="grid">
+        <div doz_type="widget" id="w20250520dd330c73d7869">
+         <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="N" data-widget-type="text">
+          <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w20250520dd330c73d7869">
+           <div class="text-table">
+            <div>
+             <p>
+              <strong>
+               <span style="font-size: 20px;">
+                오시는 길
+               </span>
+              </strong>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-dz col-dz-9" doz_flexible="N" doz_grid="9" doz_order="2" doz_type="grid">
+      <div doz_type="widget" id="w202505216c68c48b479ef">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="N" data-widget-type="text">
+        <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w202505216c68c48b479ef">
+         <div class="text-table">
+          <div>
+           <p>
+           </p>
+           <p>
+            <span style="font-size: 20px;">
+             <strong>
+              한컴아카데미 분당교육센터
+             </strong>
+            </span>
+           </p>
+           <p>
+            <span style="font-size: 16px;">
+             주소 : 경기도 성남시 분당구 성남대로 393,
+            </span>
+            <span style="font-size: 16px;">
+             두산위브 파빌리온 A동 206호
+            </span>
+           </p>
+           <p>
+            <span style="font-size: 16px;">
+             대중교통 이용시 : 신분당선 정자역 5번 출구 도보 3분
+            </span>
+           </p>
+           <p>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="doz_row" doz_flexible="Y" doz_grid="12" doz_type="row">
+     <div class="col-dz col-dz-3" doz_flexible="Y" doz_grid="3" doz_order="1" doz_type="grid">
+      <div class="doz_row" doz_flexible="N" doz_grid="3" doz_order="1" doz_type="row">
+       <div class="col-dz col-dz-3" doz_flexible="N" doz_grid="3" doz_type="grid">
+        <div doz_type="widget" id="w202505217ef70a4ffac57">
+         <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="가로선" data-widget-parent-is-mobile="N" data-widget-type="hr">
+          <div class="widget line type01 _hide" id="hr_w202505217ef70a4ffac57">
+           <div class="line_box holder" style="width:100%; ">
+            <hr style="border-top-width:1px; border-color:rgba(0, 0, 0, 0.75);"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="doz_row" doz_flexible="N" doz_grid="3" doz_order="2" doz_type="row">
+       <div class="col-dz col-dz-3" doz_flexible="N" doz_grid="3" doz_type="grid">
+        <div doz_type="widget" id="w20250520bb3b7e510a1e3">
+         <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="N" data-widget-type="text">
+          <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w20250520bb3b7e510a1e3">
+           <div class="text-table">
+            <div>
+             <p>
+              <span style="font-size: 20px;">
+               <strong>
+                NVIDIA 교육과정 문의
+               </strong>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-dz col-dz-3 col-xdz col-xdz-9" doz_flexible="N" doz_grid="3" doz_order="2" doz_type="grid" doz_xdz="9">
+      <div doz_type="widget" id="w20250521c50dcf32fcef7">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="N" data-widget-type="text">
+        <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w20250521c50dcf32fcef7">
+         <div class="text-table">
+          <div>
+           <p>
+            <span style="font-size: 16px;">
+            </span>
+           </p>
+           <p>
+            <span style="font-size: 16px;">
+             전화 : 031-622-7688  / 031-622-7779
+            </span>
+           </p>
+           <p>
+            <span style="font-size: 16px;">
+             이메일 : edu@hancomacademy.com
+            </span>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-dz col-dz-6 col-xdz col-xdz-3 col-xdz-clear" doz_clear="Y" doz_flexible="N" doz_grid="6" doz_order="3" doz_type="grid" doz_xdz="3">
+      <div doz_type="widget" id="w20250521915b50803fd43">
+       <div class="_widget_data" data-widget-anim="none" data-widget-anim-delay="0" data-widget-anim-duration="0.7" data-widget-name="텍스트" data-widget-parent-is-mobile="N" data-widget-type="text">
+        <div class="widget _text_wrap widget_text_wrap fr-view default_padding" doz_type="text" id="text_w20250521915b50803fd43">
+         <div class="text-table">
+          <div>
+           <p>
+            <span style="font-size: 16px;">
+            </span>
+           </p>
+           <p>
+            <span style="font-size: 16px;">
+             <a href="https://pf.kakao.com/_ZGAxexb/chat" rel="noopener noreferrer" target="_blank">
+              <img class="fr-fic fr-dii" data-fr-image-pasted="true" src="https://cdn.imweb.me/upload/S2025040770eb7b0226c30/73bbcde15cfa3.png" style="box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; border: 0px solid rgb(229, 231, 235); cursor: pointer; padding: 0px 1px; max-width: 100%; width: 38px;"/>
+             </a>
+            </span>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+ </div>
+ <footer id="doz_footer_wrap">
+  <div id="doz_footer">
+   <div class="footer-section footer-type05 _footer_font_preview footer_align_center footer_align_right">
+    <div class="inside">
+     <div class="doz_row">
+      <div class="col-dz-12 col-xdz-12 col-dz">
+       <div class="foot-sociallink _sns_link">
+        <div class="btn-group _sns_link_list" role="group">
+         <a class="btn _5a2f09922610d" href="/#https://www.hancomacademy.com/aboutus/index.php" style="" type="button">
+          <i class="fas fa-city">
+          </i>
+          <span class="sr-only">
+           SNS 바로가기
+          </span>
+         </a>
+         <a class="btn _35p282NFa3" href="https://blog.naver.com/hancom_academy" style="" target="_blank" type="button">
+          <i class="ii ii-nblog-sq">
+          </i>
+          <span class="sr-only">
+           SNS 바로가기
+          </span>
+         </a>
+         <a class="btn _3E2V4N52vt" href="https://www.facebook.com/hancomacademy" style="" target="_blank" type="button">
+          <i class="ii ii-facebook">
+          </i>
+          <span class="sr-only">
+           SNS 바로가기
+          </span>
+         </a>
+         <a class="btn _6EH788FVN6" href="https://www.instagram.com/hancom_academy/" style="" target="_blank" type="button">
+          <i class="ii ii-instagram-sq">
+          </i>
+          <span class="sr-only">
+           SNS 바로가기
+          </span>
+         </a>
+         <a class="btn _118JM5O768" href="https://open.kakao.com/me/nvidia_ai_academy" style="" target="_blank" type="button">
+          <i class="ii ii-kakaotalk">
+          </i>
+          <span class="sr-only">
+           SNS 바로가기
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="foot-custom">
+        <div class="custom-text _footer_text">
+         <div class="custom-text-info _text_editor fr-view">
+          <p style="text-align: left;">
+           <span style="color: rgb(255, 255, 255); font-size: 10px;">
+            (주)한컴아카데미
+           </span>
+          </p>
+          <p style="text-align: left;">
+           <span style="font-size: 10px;">
+            <span style="color: rgb(255, 255, 255);">
+             대표이사 : 김종헌｜사업자등록번호: 729-81-01695
+            </span>
+           </span>
+          </p>
+          <p style="text-align: left;">
+           <span style="font-size: 10px;">
+            <span style="color: rgb(255, 255, 255);">
+             ｜통신판매업신고번호: 2020-성남분당B-0352호
+            </span>
+           </span>
+          </p>
+          <p style="text-align: left;">
+           <span style="font-size: 10px;">
+            <span style="color: rgb(255, 255, 255);">
+             본사 : 경기도 성남시 분당구 대왕판교로 644번길 49,. 한컴타워 3층
+            </span>
+           </span>
+          </p>
+          <p style="text-align: left;">
+           <span style="font-size: 10px;">
+            <span style="color: rgb(255, 255, 255);">
+             분당 교육센터 : 경기도 성남시 분당구 성남대로 393, 두산위브 파빌리온 A동 206호
+            </span>
+           </span>
+           <span style="font-size: 10px;">
+            <span style="color: rgb(255, 255, 255);">
+             고객문의 : 031-622-7779 /
+             <a href="mailto:edu@hancomacademy.com">
+              edu@hancomacademy.com
+             </a>
+            </span>
+           </span>
+          </p>
+          <div style="margin: 0px; padding: 0px; line-height: 20px; font-size: 13px; text-size-adjust: none; font-family: Pretendard; text-align: left;">
+           <p style="margin: 0px; padding: 0px; line-height: 20px; font-size: 13px; text-size-adjust: none; font-family: Pretendard; color: rgb(120, 120, 121);">
+            <span style="font-size: 10px;">
+             <span style="color: rgb(255, 255, 255);">
+              ⓒ HANCOMACADEMY INC. ALL RIGHTS RESERVED.
+             </span>
+            </span>
+           </p>
+          </div>
+          <div style="margin: 0px; padding: 0px; line-height: 20px; font-size: 13px; text-size-adjust: none; font-family: Pretendard; display: flex; align-items: center;">
+          </div>
+         </div>
+        </div>
+        <div class="foot-foot-nav _footer_menu_wrap">
+         <ul class="nav nav-stacked footer-all-nav clearfix">
+          <div class="_policy_menu policy_menu" style="">
+           <li class="_use_policy_menu">
+            <a href="/?mode=policy" onclick="SITE.openPolicy(); return false;">
+             이용약관
+            </a>
+           </li>
+           <li class="_use_policy_menu" style="font-weight: bold">
+            <a href="/?mode=privacy" onclick="SITE.openPrivacy(); return false;">
+             개인정보처리방침
+            </a>
+           </li>
+          </div>
+          <div class="_tour_policy_menu policy_menu" style="display:none;">
+          </div>
+          <div class="_footer_menu footer_menu" style="display:none;">
+          </div>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </footer>
+ <div aria-hidden="false" class="modal" id="cocoaModal" role="dialog">
+  <div class="modal-dialog">
+   <div class="modal-content">
+   </div>
+  </div>
+ </div>
+ <div aria-hidden="false" class="modal submodal" id="cocoaSubModal" role="dialog" style="z-index: 17001">
+  <div class="modal-dialog">
+   <div class="modal-content">
+   </div>
+  </div>
+ </div>
+ <style>
+  /* PC 배너1 스타일 */
+.floBanPc1 {
+  position: fixed;
+  top: 280px; /* 윗쪽 끝에서부터의 거리 */
+  right: 0;
+  z-index: 70;
+}
+
+}
+
+/* 모바일 배너1 스타일 */
+.floBanMob1 {
+  position: fixed;
+  bottom: 130px; /* 아래 끝에서부터의 거리 */
+  right: 0; /* 오른쪽 끝에서부터의 거리 */
+  z-index: 99;
+}
+ </style>
+ <div class="floBanPc1 hidden-md hidden-sm hidden-xs">
+  <a href="https://kdthancomacademy.imweb.me/nvidia">
+   <img src="https://cdn.imweb.me/upload/S2025040770eb7b0226c30/3ec5f2a24617c.png
+" width="120px;"/>
+  </a>
+ </div>
+ <!--[if lte IE 9]>
+<script  src='https://vendor-cdn.imweb.me/js/html5shiv.min.js?1577682292'></script>
+<![endif]-->
+ <!--[if lte IE 9]>
+<script  src='https://vendor-cdn.imweb.me/js/respond.min.js?1577682292'></script>
+<![endif]-->
+ <!--[if lte IE 9]>
+<script  src='https://vendor-cdn.imweb.me/js/placeholders.min.js?1577682292'></script>
+<![endif]-->
+ <!--[if lte IE 8]>
+<script  src='https://vendor-cdn.imweb.me/js/PIE_IE678.js?1577682292'></script>
+<![endif]-->
+ <!--[if lte IE 9]>
+<script  src='https://vendor-cdn.imweb.me/js/owl.carousel1.js?1577682292'></script>
+<![endif]-->
+ <ul id="image_list" style="display: none">
+ </ul>
+ <!-- start oms-customer-front-office -->
+ <!-- end oms-customer-front-office -->
+ <style>
+  /* pc 화면 */
+						@media (min-width: 768px) {
+							#kakao-talk-channel-chat-button {
+							position: fixed;
+							z-index: 999;
+							right: 32px;
+							bottom: 32px;
+							}
+						}
+						/* 모바일 화면 */
+						@media (max-width:767px) {
+							#kakao-talk-channel-chat-button {
+							position: fixed;
+							z-index: 999;
+							right: 16px;
+							bottom: 16px;
+							}
+						}
+						#kakao-talk-channel-chat-button.default > img {
+							border-radius: 64px;
+							box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12), 0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+						}
+						#kakao-talk-channel-chat-button:hover > img {
+							filter: brightness(0.96);
+						}
+						#kakao-talk-channel-chat-button:focus > img {
+							filter: brightness(0.92);
+						}
+ </style>
+ <a class="default" href="javascript:Kakao.Channel.chat({channelPublicId: '_ZGAxexb'});" id="kakao-talk-channel-chat-button">
+  <img alt="카카오톡 채널 채팅하기 버튼" src="https://vendor-cdn.imweb.me/images/kakao-talk-button-default.svg"/>
+ </a>
+</body>
