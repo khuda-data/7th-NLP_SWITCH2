@@ -4,3 +4,8 @@ openai
 pandas
 sentence-transformers
 faiss-cpu
+llama-cpp-python
+python-dotenv
+tqdm
+scikit-learn
+jinja2
